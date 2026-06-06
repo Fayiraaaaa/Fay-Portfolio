@@ -5,166 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fay | Professional Image Editor Portfolio</title>
     <style>
-        /* CSS UTAMA & RESET TAMPILAN */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        body {
-            background-color: #121212;
-            color: #e0e0e0;
-            line-height: 1.8;
-        }
-
-        .container {
-            max-width: 950px;
-            margin: 0 auto;
-            padding: 50px 20px;
-        }
-
-        /* Header / Hero Section */
-        header {
-            text-align: center;
-            padding: 60px 0 30px 0;
-        }
-
-        header h1 {
-            font-size: 2.8rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-        }
-
-        header .bio {
-            font-size: 1.15rem;
-            color: #a0a0a0;
-            max-width: 750px;
-            margin: 0 auto;
-            font-weight: 300;
-        }
-
-        /* Portfolio Section */
-        .portfolio-section {
-            padding: 30px 0 60px 0;
-            border-top: 1px solid #232323;
-        }
-
-        /* Paragraf Utama Model Artikel Elegan (Tanpa Kotak) */
-        .article-paragraph {
-            font-size: 1.2rem;
-            color: #cccccc;
-            text-align: justify;
-            max-width: 800px;
-            margin: 0 auto 60px auto;
-            letter-spacing: 0.3px;
-        }
-
-        /* Grid Gambar Portofolio di Bawah Artikel */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 35px;
-        }
-
-        .portfolio-item {
-            background-color: #1a1a1a;
-            border-radius: 6px;
-            overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .portfolio-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
-        }
-
-        /* Wadah Gambar Portofolio */
-        .image-container {
-            position: relative;
-            width: 100%;
-            height: 240px;
-            background-color: #222222;
-        }
-
-        .portfolio-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .item-info {
-            padding: 18px;
-            border-top: 1px solid #232323;
-            text-align: center;
-        }
-
-        .item-info h3 {
-            font-size: 1.1rem;
-            color: #ffffff;
-            font-weight: 500;
-            letter-spacing: 0.5px;
-        }
-
-        /* Contact / Call to Action Section */
-        .contact-section {
-            text-align: center;
-            padding: 60px 30px;
-            background: linear-gradient(135deg, #161616 0%, #1e1e1e 100%);
-            border-radius: 8px;
-            margin-top: 40px;
-            border: 1px solid #232323;
-        }
-
-        .contact-section h2 {
-            font-size: 2rem;
-            color: #ffffff;
-            margin-bottom: 15px;
-        }
-
-        .contact-section p {
-            color: #aaaaaa;
-            margin-bottom: 30px;
-            font-size: 1rem;
-        }
-
-        .btn-whatsapp {
-            display: inline-block;
-            background-color: #25D366;
-            color: white;
-            text-decoration: none;
-            padding: 14px 36px;
-            font-weight: bold;
-            border-radius: 50px;
-            font-size: 1rem;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
-            transform: scale(1.02);
-        }
-
-        footer {
-            text-align: center;
-            padding-top: 60px;
-            color: #555555;
-            font-size: 0.85rem;
-        }
-    </style>
-</head>
-<body>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fay | Professional Image Editor Portfolio</title>
-    <style>
         /* CSS RESET & UTAMA */
         * {
             margin: 0;
@@ -263,7 +103,7 @@
             margin: 50px 0;
         }
 
-        /* Contact / Call to Action Section */
+        /* Seksi Ceklis Layanan & Kontak Email */
         .contact-section {
             text-align: center;
             padding: 60px 30px;
@@ -279,15 +119,47 @@
             margin-bottom: 15px;
         }
 
-        .contact-section p {
+        .contact-section .instruction {
             color: #aaaaaa;
             margin-bottom: 30px;
             font-size: 1rem;
         }
 
-        .btn-whatsapp {
+        /* Styling Form Ceklis */
+        .services-form {
+            max-width: 400px;
+            margin: 0 auto 35px auto;
+            text-align: left;
+            background-color: #1a1a1a;
+            padding: 20px;
+            border-radius: 6px;
+            border: 1px solid #2a2a2a;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            cursor: pointer;
+            font-size: 1.05rem;
+            color: #dddddd;
+        }
+
+        .checkbox-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .checkbox-group input {
+            margin-right: 12px;
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #007acc; /* Warna ceklis biru profesional */
+        }
+
+        .btn-email {
             display: inline-block;
-            background-color: #25D366;
+            background-color: #007acc;
             color: white;
             text-decoration: none;
             padding: 14px 36px;
@@ -295,11 +167,13 @@
             border-radius: 50px;
             font-size: 1rem;
             transition: background-color 0.3s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3);
+            cursor: pointer;
+            border: none;
         }
 
-        .btn-whatsapp:hover {
-            background-color: #20ba5a;
+        .btn-email:hover {
+            background-color: #0062a3;
             transform: scale(1.02);
         }
 
@@ -311,13 +185,106 @@
         }
     </style>
 </head>
+<body>
 
+    <div class="container">
+        <header>
+            <h1>FAY</h1>
+            <p class="bio">Professional Freelance Image Editor with 5+ years of experience specializing in High-End Visual Solutions.</p>
+        </header>
+
+        <p class="intro-paragraph">
+            High-quality product images are the core of e-commerce conversions. Professional visual optimization does more than just clean up an image—it builds trust, elevates brand value, and directly influences a buyer's decision to make a purchase.
+        </p>
+
+        <div class="article-section">
+            <h2>Background Removal & Isolation</h2>
+            <p>
+                Clean and flawless background removal is essential for distraction-free shopping. By isolating the product on a crisp, pixel-perfect white or transparent background, it enhances visual consistency, highlights the product's true shape, and instantly builds buyer trust for e-commerce listings.
+            </p>
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/800x450" alt="Background Removal & Isolation" class="portfolio-img">
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="article-section">
+            <h2>High-End Product Retouching</h2>
+            <p>
+                First impressions drive e-commerce sales. Professional retouching removes dust, scratches, and unwanted imperfections while preserving realistic textures. This high-end finish elevates the perceived value of the product, making it look premium, desirable, and ready to compete in the market.
+            </p>
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/800x450" alt="High-End Product Retouching" class="portfolio-img">
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="article-section">
+            <h2>Color Matching & Correction</h2>
+            <p>
+                Accurate color matching is critical to reducing product returns and securing customer satisfaction. By ensuring that the digital image precisely reflects the product's true-to-life colors, it eliminates buyer hesitation, aligns with reality, and gives customers the confidence to click 'Buy Now'.
+            </p>
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/800x450" alt="Color Matching & Correction" class="portfolio-img">
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <h2>Select Services You Need</h2>
+            <p class="instruction">Check the services you require below, then click the button to send an inquiry directly to my email.</p>
+            
+            <div class="services-form">
+                <label class="checkbox-group">
+                    <input type="checkbox" id="srv-bg" value="Background Removal & Isolation">
+                    Background Removal & Isolation
+                </label>
+                <label class="checkbox-group">
+                    <input type="checkbox" id="srv-retouch" value="High-End Product Retouching">
+                    High-End Product Retouching
+                </label>
+                <label class="checkbox-group">
+                    <input type="checkbox" id="srv-color" value="Color Matching & Correction">
+                    Color Matching & Correction
+                </label>
+            </div>
+
+            <button class="btn-email" id="sendEmailBtn">Inquire via Email</button>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Fay. All rights reserved.</p>
+        </footer>
     </div>
 
     <script>
-        // Log sederhana saat tombol kontak diklik
-        document.querySelector('.btn-whatsapp').addEventListener('click', function() {
-            console.log('Client is redirecting to WhatsApp.');
+        document.getElementById('sendEmailBtn').addEventListener('click', function() {
+            // Tulis alamat email kamu di bawah ini
+            const myEmail = "your-email@example.com"; 
+            const subject = encodeURIComponent("Inquiry for Image Editing Services - Portfolio Client");
+            
+            // Mencari tahu layanan apa saja yang diceklis klien
+            let selectedServices = [];
+            if(document.getElementById('srv-bg').checked) selectedServices.push("- Background Removal & Isolation");
+            if(document.getElementById('srv-retouch').checked) selectedServices.push("- High-End Product Retouching");
+            if(document.getElementById('srv-color').checked) selectedServices.push("- Color Matching & Correction");
+            
+            // Menyusun isi draf text email otomatis
+            let bodyText = "Hello Fay,\n\nI visited your portfolio website and am interested in collaborating with you.\n\n";
+            
+            if(selectedServices.length > 0) {
+                bodyText += "I am interested in the following checked services:\n" + selectedServices.join("\n") + "\n\n";
+            } else {
+                bodyText += "I am interested in discussing your image editing services.\n\n";
+            }
+            
+            bodyText += "Please let me know your availability and rates.\n\nBest regards,";
+            const body = encodeURIComponent(bodyText);
+            
+            // Membuka aplikasi email bawaan laptop/HP klien secara otomatis
+            window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
         });
     </script>
 </body>
+</html>
