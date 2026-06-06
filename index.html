@@ -152,6 +152,228 @@
     </style>
 </head>
 <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fay | Professional Image Editor Portfolio</title>
+    <style>
+        /* CSS UNTUK TAMPILAN (STYLING) */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.7;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            padding: 60px 0 40px 0;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        header .bio {
+            font-size: 1.1rem;
+            color: #a0a0a0;
+            max-width: 750px;
+            margin: 0 auto;
+        }
+
+        /* Portfolio Section */
+        .portfolio-section {
+            padding: 40px 0 60px 0;
+            border-top: 1px solid #292929;
+        }
+
+        /* Paragraf Penjelasan Utama (Sesuai Request-mu) */
+        .value-paragraph {
+            font-size: 1.1rem;
+            color: #cccccc;
+            text-align: justify;
+            max-width: 850px;
+            margin: 0 auto 50px auto;
+            background-color: #1e1e1e;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        /* Grid Gambar di Bawah Paragraf */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-item {
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            transition: transform 0.3s ease;
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-5px);
+        }
+
+        /* Wadah Gambar Portofolio */
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 250px;
+            background-color: #252525;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .item-info {
+            padding: 15px 20px 20px 20px;
+            border-top: 1px solid #292929;
+            text-align: center;
+        }
+
+        .item-info h3 {
+            font-size: 1.1rem;
+            color: #ffffff;
+        }
+
+        /* Contact / Call to Action Section */
+        .contact-section {
+            text-align: center;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, #1e1e1e 0%, #252525 100%);
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: scale(1.03);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 60px;
+            color: #666666;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>FAY</h1>
+            <p class="bio">Professional Freelance Image Editor with 5+ years of experience specializing in High-End Visual Solutions.</p>
+        </header>
+
+        <section class="portfolio-section">
+            
+            <div class="value-paragraph">
+                High-quality product images are the core of e-commerce conversions. Professional background removal, precise retouching, and accurate color matching do more than just clean up an image—they build trust, eliminate buyer hesitation, elevate brand value, and directly influence a shopper's final decision to click "Buy Now".
+            </div>
+            
+            <div class="grid">
+                
+                <div class="portfolio-item">
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/400x300" alt="Background Removal" class="portfolio-img">
+                    </div>
+                    <div class="item-info">
+                        <h3>Background Removal & Isolation</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/400x300" alt="Product Retouching" class="portfolio-img">
+                    </div>
+                    <div class="item-info">
+                        <h3>High-End Product Retouching</h3>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <div class="image-container">
+                        <img src="https://via.placeholder.com/400x300" alt="Color Matching" class="portfolio-img">
+                    </div>
+                    <div class="item-info">
+                        <h3>Color Matching & Correction</h3>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <h2>Let's Create Visuals That Actually Sell</h2>
+            <p>Ready to elevate your product images? Click the button below to discuss your project via WhatsApp.</p>
+            <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Fay,%20saya%20tertarik%20dengan%20jasa%20editing%20fotomu" class="btn-whatsapp" target="_blank">
+                Hire Me on WhatsApp
+            </a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Fay. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector('.btn-whatsapp').addEventListener('click', function() {
+            console.log('Client is redirecting to WhatsApp.');
+        });
+    </script>
+</body>
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
