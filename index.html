@@ -158,7 +158,225 @@
     </style>
 </head>
 <body>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fay | Professional Image Editor Portfolio</title>
+    <style>
+        /* CSS RESET & UTAMA */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.8;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+
+        /* Header / Hero Section */
+        header {
+            text-align: center;
+            padding: 60px 0 40px 0;
+            border-bottom: 1px solid #232323;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        header .bio {
+            font-size: 1.2rem;
+            color: #a0a0a0;
+            max-width: 700px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+
+        /* Paragraf Pembuka Utama */
+        .intro-paragraph {
+            font-size: 1.25rem;
+            color: #ffffff;
+            text-align: justify;
+            margin-bottom: 60px;
+            font-weight: 400;
+            border-left: 3px solid #555555;
+            padding-left: 20px;
+        }
+
+        /* Gaya Artikel Memanjang ke Bawah (Tanpa Kotak) */
+        .article-section {
+            margin-bottom: 60px;
+        }
+
+        .article-section h2 {
+            font-size: 1.8rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .article-section p {
+            font-size: 1.1rem;
+            color: #cccccc;
+            text-align: justify;
+            margin-bottom: 25px;
+        }
+
+        /* Wadah Gambar di Bawah Paragraf */
+        .image-wrapper {
+            width: 100%;
+            max-height: 450px;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+            margin-bottom: 20px;
+        }
+
+        .portfolio-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Garis Pembatas Antar Artikel */
+        .divider {
+            height: 1px;
+            background-color: #232323;
+            margin: 50px 0;
+        }
+
+        /* Contact / Call to Action Section */
+        .contact-section {
+            text-align: center;
+            padding: 60px 30px;
+            background: linear-gradient(135deg, #161616 0%, #1e1e1e 100%);
+            border-radius: 6px;
+            margin-top: 60px;
+            border: 1px solid #232323;
+        }
+
+        .contact-section h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+        }
+
+        .contact-section p {
+            color: #aaaaaa;
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        .btn-whatsapp {
+            display: inline-block;
+            background-color: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 14px 36px;
+            font-weight: bold;
+            border-radius: 50px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+        }
+
+        .btn-whatsapp:hover {
+            background-color: #20ba5a;
+            transform: scale(1.02);
+        }
+
+        footer {
+            text-align: center;
+            padding-top: 60px;
+            color: #555555;
+            font-size: 0.85rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>FAY</h1>
+            <p class="bio">Professional Freelance Image Editor with 5+ years of experience specializing in High-End Visual Solutions.</p>
+        </header>
+
+        <p class="intro-paragraph">
+            High-quality product images are the core of e-commerce conversions. Professional visual optimization does more than just clean up an image—it builds trust, elevates brand value, and directly influences a buyer's decision to make a purchase.
+        </p>
+
+        <div class="article-section">
+            <h2>Background Removal & Isolation</h2>
+            <p>
+                Clean and flawless background removal is essential for distraction-free shopping. By isolating the product on a crisp, pixel-perfect white or transparent background, it enhances visual consistency, highlights the product's true shape, and instantly builds buyer trust for e-commerce listings.
+            </p>
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/800x450" alt="Background Removal & Isolation" class="portfolio-img">
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="article-section">
+            <h2>High-End Product Retouching</h2>
+            <p>
+                First impressions drive e-commerce sales. Professional retouching removes dust, scratches, and unwanted imperfections while preserving realistic textures. This high-end finish elevates the perceived value of the product, making it look premium, desirable, and ready to compete in the market.
+            </p>
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/800x450" alt="High-End Product Retouching" class="portfolio-img">
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="article-section">
+            <h2>Color Matching & Correction</h2>
+            <p>
+                Accurate color matching is critical to reducing product returns and securing customer satisfaction. By ensuring that the digital image precisely reflects the product's true-to-life colors, it eliminates buyer hesitation, aligns with reality, and gives customers the confidence to click 'Buy Now'.
+            </p>
+            <div class="image-wrapper">
+                <img src="https://via.placeholder.com/800x450" alt="Color Matching & Correction" class="portfolio-img">
+            </div>
+        </div>
+
+        <section class="contact-section">
+            <h2>Let's Create Visuals That Actually Sell</h2>
+            <p>Ready to elevate your product images? Click the button below to discuss your project via WhatsApp.</p>
+            <a href="https://wa.me/628XXXXXXXXXX?text=Halo%20Fay,%20saya%20tertarik%20dengan%20jasa%20editing%20fotomu" class="btn-whatsapp" target="_blank">
+                Hire Me on WhatsApp
+            </a>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Fay. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.querySelector('.btn-whatsapp').addEventListener('click', function() {
+            console.log('Client is redirecting to WhatsApp.');
+        });
+    </script>
+</body>
+</html>
     <div class="container">
         <header>
             <h1>FAY</h1>
