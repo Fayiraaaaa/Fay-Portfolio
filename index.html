@@ -18,19 +18,21 @@
         }
 
         body {
+            /* Black background with subtle halftone texture */
             background-color: #0b0c0d; 
             background-image: radial-gradient(#1c1e21 1px, transparent 1px);
             background-size: 25px 25px;
-            color: #ffffff;
+            color: #ffffff; /* High-Contrast White */
             font-family: 'Inter', sans-serif;
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 900px; /* Wider for the composite image */
             margin: 0 auto;
             padding: 60px 24px;
+            position: relative;
         }
 
         /* Header / Hero Section */
@@ -41,6 +43,7 @@
             position: relative;
         }
 
+        /* Subtle separator */
         header::after {
             content: '';
             position: absolute;
@@ -62,7 +65,7 @@
 
         header .bio {
             font-size: 1.2rem;
-            color: #aaaaaa;
+            color: #aaaaaa; /* Professional grey */
             max-width: 650px;
             margin: 0 auto;
             font-weight: 300;
@@ -78,11 +81,11 @@
             text-align: justify;
             margin-bottom: 80px;
             line-height: 1.9;
-            border-left: 2px solid #ffffff;
+            border-left: 2px solid #ffffff; /* White Accent */
             padding-left: 25px;
         }
 
-        /* Clean Article Flow */
+        /* Clean Article Flow (No Boxes) */
         .article-section {
             margin-bottom: 70px;
         }
@@ -104,121 +107,30 @@
             font-weight: 300;
         }
 
-        /* 🛠️ FIXED LOCK-POSITION SLIDER COMPONENT */
-        .slider-container {
-            position: relative;
+        /* Integrated Image Composite with Hover Glow */
+        .composite-wrapper {
             width: 100%;
-            height: 480px;
-            overflow: hidden;
             border-radius: 8px;
+            position: relative;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
-            margin-bottom: 30px;
-            user-select: none;
+            margin-bottom: 50px;
+            border: 1px solid transparent;
+            transition: border-color 0.4s ease, box-shadow 0.4s ease;
         }
 
-        /* Foto Dasar: AFTER (Selalu Diam Menetap di Tempat) */
-        .slider-img-after {
+        .composite-wrapper:hover {
+            border-color: rgba(255, 255, 255, 0.2); /* White Glow */
+            box-shadow: 0 15px 50px rgba(255, 255, 255, 0.15);
+        }
+
+        .portfolio-composite {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
             display: block;
+            border-radius: 8px;
         }
 
-        /* Lapisan Atas: BEFORE (Tirai Bergeser) */
-        .img-before-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 50%; /* Posisi tirai awal (50%) */
-            height: 100%;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        /* KUNCI POSISI FOTO BEFORE: Lebar harus dipaksa statis mengikuti container luar */
-        .slider-img-before {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 752px; /* Dikunci secara matematis (lebar container dikurangi padding) */
-            height: 480px;
-            object-fit: cover;
-            max-width: none;
-        }
-
-        /* Input Range Transparan Sebagai Pengendali */
-        .slider-handle-input {
-            position: absolute;
-            top: 0;
-            left: 0;
-            -webkit-appearance: none;
-            appearance: none;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            outline: none;
-            margin: 0;
-            cursor: ew-resize;
-            z-index: 5;
-        }
-
-        /* Garis Tengah */
-        .slider-line {
-            position: absolute;
-            top: 0;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            background-color: #ffffff;
-            z-index: 3;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-        }
-
-        /* Tombol Bulat Tengah */
-        .slider-button {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 40px;
-            height: 40px;
-            background-color: #ffffff;
-            border-radius: 50%;
-            z-index: 4;
-            pointer-events: none;
-            box-shadow: 0 0 10px rgba(0,0,0,0.5);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .slider-button::before {
-            content: '↔';
-            color: #000000;
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Label Status Pojok */
-        .badge-label {
-            position: absolute;
-            top: 15px;
-            background-color: rgba(0, 0, 0, 0.7);
-            color: #ffffff;
-            padding: 4px 10px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            border-radius: 4px;
-            font-weight: 500;
-            border: 1px solid rgba(255,255,255,0.1);
-            pointer-events: none;
-        }
-        .badge-before { left: 15px; z-index: 3; }
-        .badge-after { right: 15px; z-index: 1; }
-
-        /* PRICING SECTIONS */
+        /* PRICING RATES (English) */
         .price-list {
             margin-bottom: 30px;
         }
@@ -232,6 +144,7 @@
             position: relative;
         }
 
+        /* Dashed bottom line */
         .price-item::after {
             content: '';
             position: absolute;
@@ -258,7 +171,7 @@
             color: #ffffff;
             font-family: Courier, monospace;
             font-weight: bold;
-            opacity: 0.3;
+            opacity: 0.5;
         }
 
         .price-value {
@@ -276,7 +189,7 @@
             padding-left: 15px;
         }
 
-        /* FAQ SECTION */
+        /* FAQ SECTION (English Accordion) */
         .faq-wrapper {
             margin-top: 20px;
         }
@@ -287,6 +200,7 @@
             padding: 15px 0;
         }
 
+        /* FAQ Gradient separator */
         .faq-item::after {
             content: '';
             position: absolute;
@@ -307,13 +221,18 @@
             font-weight: 400;
             user-select: none;
             padding: 10px 0;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover {
+            color: #ffffff; /* White on Hover */
         }
 
         .faq-question::after {
             content: '+';
             font-size: 1.4rem;
-            color: #ffffff;
-            transition: transform 0.3s ease;
+            color: #ffffff; /* White Icon */
+            transition: transform 0.3s ease, color 0.3s ease;
             font-weight: 600;
         }
 
@@ -336,7 +255,7 @@
             margin: 60px 0;
         }
 
-        /* Contact Section */
+        /* Editorial Style Contact Section */
         .contact-section {
             text-align: center;
             padding: 70px 40px;
@@ -345,6 +264,7 @@
             margin-top: 80px;
             border: 1px solid rgba(255,255,255,0.03);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
         }
 
         .contact-section h2 {
@@ -405,6 +325,7 @@
             cursor: pointer;
         }
 
+        /* Minimalist Premium Email Button */
         .btn-email {
             display: inline-block;
             background-color: #ffffff;
@@ -417,15 +338,17 @@
             letter-spacing: 1px;
             transition: all 0.3s ease;
             cursor: pointer;
-            border: none;
+            border: 1px solid transparent;
             box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
         }
 
         .btn-email:hover {
             background-color: #cccccc;
             transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
         }
 
+        /* Footer Aesthetics */
         footer {
             text-align: center;
             padding-top: 80px;
@@ -433,13 +356,7 @@
             color: #555555;
             font-size: 0.8rem;
             letter-spacing: 1px;
-        }
-
-        /* Responsive Fix untuk Lebar Foto Gambar Mengunci */
-        @media(max-width: 800px) {
-            .slider-img-before {
-                width: calc(100vw - 48px);
-            }
+            position: relative;
         }
     </style>
 </head>
@@ -460,69 +377,24 @@
             <p>
                 Clean and flawless background removal is essential for distraction-free shopping. By isolating the product on a crisp, pixel-perfect white or transparent background, it enhances visual consistency, highlights the product's true shape, and instantly builds buyer trust for e-commerce listings.
             </p>
-            
-            <div class="slider-container" id="slider-1">
-                <span class="badge-label badge-before">Before</span>
-                <span class="badge-label badge-after">After</span>
-                
-                <img src="https://images.unsplash.com/photo-1626806787426-5910811b6325?w=800&q=80" class="slider-img-after" alt="Bottle After Background Removal">
-                
-                <div class="img-before-wrapper" id="wrapper-1">
-                    <img src="https://images.unsplash.com/photo-1626806787426-5910811b6325?w=800&blur=50" class="slider-img-before" alt="Bottle Before Background Removal">
-                </div>
-                
-                <div class="slider-line" id="line-1"></div>
-                <div class="slider-button" id="button-1"></div>
-                <input type="range" min="0" max="100" value="50" class="slider-handle-input" oninput="moveSlider(this, 'wrapper-1', 'line-1', 'button-1')">
-            </div>
         </div>
-
-        <div class="divider"></div>
 
         <div class="article-section">
             <h2>High-End Product Retouching</h2>
             <p>
                 First impressions drive e-commerce sales. Professional retouching removes dust, scratches, and unwanted imperfections while preserving realistic textures. This high-end finish elevates the perceived value of the product, making it look premium, desirable, and ready to compete in the market.
             </p>
-            
-            <div class="slider-container" id="slider-2">
-                <span class="badge-label badge-before">Before</span>
-                <span class="badge-label badge-after">After</span>
-                
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80" class="slider-img-after" alt="Watch After Premium Retouching">
-                
-                <div class="img-before-wrapper" id="wrapper-2">
-                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=10" class="slider-img-before" alt="Watch Before Premium Retouching">
-                </div>
-                
-                <div class="slider-line" id="line-2"></div>
-                <div class="slider-button" id="button-2"></div>
-                <input type="range" min="0" max="100" value="50" class="slider-handle-input" oninput="moveSlider(this, 'wrapper-2', 'line-2', 'button-2')">
-            </div>
         </div>
-
-        <div class="divider"></div>
 
         <div class="article-section">
             <h2>Color Matching & Correction</h2>
             <p>
                 Accurate color matching is critical to reducing product returns and securing customer satisfaction. By ensuring that the digital image precisely reflects the product's true-to-life colors, it eliminates buyer hesitation, aligns with reality, and gives customers the confidence to click 'Buy Now'.
             </p>
-            
-            <div class="slider-container" id="slider-3">
-                <span class="badge-label badge-before">Before</span>
-                <span class="badge-label badge-after">After</span>
-                
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" class="slider-img-after" alt="Shoes After Color Matching">
-                
-                <div class="img-before-wrapper" id="wrapper-3">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&sepia=80" class="slider-img-before" alt="Shoes Before Color Matching">
-                </div>
-                
-                <div class="slider-line" id="line-3"></div>
-                <div class="slider-button" id="button-3"></div>
-                <input type="range" min="0" max="100" value="50" class="slider-handle-input" oninput="moveSlider(this, 'wrapper-3', 'line-3', 'button-3')">
-            </div>
+        </div>
+
+        <div class="composite-wrapper">
+            <img src="image_3.png" alt="Fay Professional Image Editing: Dusty Ring Retouch, Strict Bottle Isolation, Natural Shoe Color Matching Showcase" class="portfolio-composite">
         </div>
 
         <div class="divider"></div>
@@ -621,17 +493,8 @@
     </div>
 
     <script>
-        // Logika Mengunci Gerakan Foto (Murni Hanya Menggeser Garis Tirai)
-        function moveSlider(slider, wrapperId, lineId, buttonId) {
-            const value = slider.value;
-            document.getElementById(wrapperId).style.width = value + '%';
-            document.getElementById(lineId).style.left = value + '%';
-            document.getElementById(buttonId).style.left = value + '%';
-        }
-
-        // Script Otomatisasi Isi Email
         document.getElementById('sendEmailBtn').addEventListener('click', function() {
-            const myEmail = "your-email@example.com"; // GANTI JADI EMAIL ASLIMU
+            const myEmail = "your-email@example.com"; // REPLACE WITH YOUR REAL EMAIL
             const subject = encodeURIComponent("Inquiry for Image Editing Services");
             
             let selectedServices = [];
@@ -652,15 +515,6 @@
             
             window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
         });
-
-        // Menyesuaikan ukuran lebar foto Before saat layar laptop diubah ukurannya (Responsive Locking)
-        window.addEventListener('resize', function() {
-            const width = document.querySelector('.slider-container').clientWidth;
-            document.querySelectorAll('.slider-img-before').forEach(img => {
-                img.style.width = width + 'px';
-            });
-        });
-        window.dispatchEvent(new Event('resize'));
     </script>
 </body>
 </html>
