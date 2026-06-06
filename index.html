@@ -104,7 +104,7 @@
             font-weight: 300;
         }
 
-        /* 🛠️ INTERACTIVE SLIDER CORE COMPONENT STYLES */
+        /* 🛠️ FIXED LOCK-POSITION SLIDER COMPONENT */
         .slider-container {
             position: relative;
             width: 100%;
@@ -116,30 +116,41 @@
             user-select: none;
         }
 
-        .slider-img {
-            position: absolute;
-            top: 0;
-            left: 0;
+        /* Foto Dasar: AFTER (Selalu Diam Menetap di Tempat) */
+        .slider-img-after {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            pointer-events: none;
+            display: block;
         }
 
-        /* Wadah Gambar 'Before' yang Ukuran Lebarnya Dinamis */
+        /* Lapisan Atas: BEFORE (Tirai Bergeser) */
         .img-before-wrapper {
             position: absolute;
             top: 0;
             left: 0;
-            width: 50%; /* Nilai awal tengah halaman */
+            width: 50%; /* Posisi tirai awal (50%) */
             height: 100%;
             overflow: hidden;
             z-index: 2;
         }
 
-        /* Elemen Input Pengendali Transparan (Garis Geser) */
+        /* KUNCI POSISI FOTO BEFORE: Lebar harus dipaksa statis mengikuti container luar */
+        .slider-img-before {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 752px; /* Dikunci secara matematis (lebar container dikurangi padding) */
+            height: 480px;
+            object-fit: cover;
+            max-width: none;
+        }
+
+        /* Input Range Transparan Sebagai Pengendali */
         .slider-handle-input {
             position: absolute;
+            top: 0;
+            left: 0;
             -webkit-appearance: none;
             appearance: none;
             width: 100%;
@@ -147,12 +158,11 @@
             background: transparent;
             outline: none;
             margin: 0;
-            transition: all 0.3s;
             cursor: ew-resize;
             z-index: 5;
         }
 
-        /* Garis Pembatas Vertikal Visual */
+        /* Garis Tengah */
         .slider-line {
             position: absolute;
             top: 0;
@@ -165,7 +175,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
-        /* Bulatan Tombol di Tengah Garis */
+        /* Tombol Bulat Tengah */
         .slider-button {
             position: absolute;
             top: 50%;
@@ -190,7 +200,7 @@
             font-size: 1.1rem;
         }
 
-        /* Teks Label Status B/A Menempel Tetap di Pojok */
+        /* Label Status Pojok */
         .badge-label {
             position: absolute;
             top: 15px;
@@ -208,7 +218,7 @@
         .badge-before { left: 15px; z-index: 3; }
         .badge-after { right: 15px; z-index: 1; }
 
-        /* PRICING SECTIONS (Premium Dots) */
+        /* PRICING SECTIONS */
         .price-list {
             margin-bottom: 30px;
         }
@@ -319,7 +329,7 @@
             text-align: justify;
         }
 
-        /* Linear Gradient Divider */
+        /* Divider */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #222222, transparent);
@@ -424,6 +434,13 @@
             font-size: 0.8rem;
             letter-spacing: 1px;
         }
+
+        /* Responsive Fix untuk Lebar Foto Gambar Mengunci */
+        @media(max-width: 800px) {
+            .slider-img-before {
+                width: calc(100vw - 48px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -444,19 +461,18 @@
                 Clean and flawless background removal is essential for distraction-free shopping. By isolating the product on a crisp, pixel-perfect white or transparent background, it enhances visual consistency, highlights the product's true shape, and instantly builds buyer trust for e-commerce listings.
             </p>
             
-            <div class="slider-container">
+            <div class="slider-container" id="slider-1">
                 <span class="badge-label badge-before">Before</span>
                 <span class="badge-label badge-after">After</span>
                 
-                <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?w=800&q=80" class="slider-img" alt="After Background Removal">
+                <img src="https://images.unsplash.com/photo-1626806787426-5910811b6325?w=800&q=80" class="slider-img-after" alt="Bottle After Background Removal">
                 
                 <div class="img-before-wrapper" id="wrapper-1">
-                    <img src="https://images.unsplash.com/photo-1527018601619-a508a2be00cd?w=800&q=30" class="slider-img" alt="Before Background Removal">
+                    <img src="https://images.unsplash.com/photo-1626806787426-5910811b6325?w=800&blur=50" class="slider-img-before" alt="Bottle Before Background Removal">
                 </div>
                 
                 <div class="slider-line" id="line-1"></div>
                 <div class="slider-button" id="button-1"></div>
-                
                 <input type="range" min="0" max="100" value="50" class="slider-handle-input" oninput="moveSlider(this, 'wrapper-1', 'line-1', 'button-1')">
             </div>
         </div>
@@ -469,14 +485,14 @@
                 First impressions drive e-commerce sales. Professional retouching removes dust, scratches, and unwanted imperfections while preserving realistic textures. This high-end finish elevates the perceived value of the product, making it look premium, desirable, and ready to compete in the market.
             </p>
             
-            <div class="slider-container">
+            <div class="slider-container" id="slider-2">
                 <span class="badge-label badge-before">Before</span>
                 <span class="badge-label badge-after">After</span>
                 
-                <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=800&q=80" class="slider-img" alt="After Product Retouching">
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=80" class="slider-img-after" alt="Watch After Premium Retouching">
                 
                 <div class="img-before-wrapper" id="wrapper-2">
-                    <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=800&q=10" class="slider-img" alt="Before Product Retouching">
+                    <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&q=10" class="slider-img-before" alt="Watch Before Premium Retouching">
                 </div>
                 
                 <div class="slider-line" id="line-2"></div>
@@ -493,14 +509,14 @@
                 Accurate color matching is critical to reducing product returns and securing customer satisfaction. By ensuring that the digital image precisely reflects the product's true-to-life colors, it eliminates buyer hesitation, aligns with reality, and gives customers the confidence to click 'Buy Now'.
             </p>
             
-            <div class="slider-container">
+            <div class="slider-container" id="slider-3">
                 <span class="badge-label badge-before">Before</span>
                 <span class="badge-label badge-after">After</span>
                 
-                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" class="slider-img" alt="After Color Matching">
+                <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=80" class="slider-img-after" alt="Shoes After Color Matching">
                 
                 <div class="img-before-wrapper" id="wrapper-3">
-                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&q=10" class="slider-img" alt="Before Color Matching">
+                    <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=800&sepia=80" class="slider-img-before" alt="Shoes Before Color Matching">
                 </div>
                 
                 <div class="slider-line" id="line-3"></div>
@@ -605,7 +621,7 @@
     </div>
 
     <script>
-        // Logika Matematika Pengendali Slider Geser
+        // Logika Mengunci Gerakan Foto (Murni Hanya Menggeser Garis Tirai)
         function moveSlider(slider, wrapperId, lineId, buttonId) {
             const value = slider.value;
             document.getElementById(wrapperId).style.width = value + '%';
@@ -615,7 +631,7 @@
 
         // Script Otomatisasi Isi Email
         document.getElementById('sendEmailBtn').addEventListener('click', function() {
-            const myEmail = "your-email@example.com"; // GANTI DENGAN EMAIL ASLIMU
+            const myEmail = "your-email@example.com"; // GANTI JADI EMAIL ASLIMU
             const subject = encodeURIComponent("Inquiry for Image Editing Services");
             
             let selectedServices = [];
@@ -636,6 +652,15 @@
             
             window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
         });
+
+        // Menyesuaikan ukuran lebar foto Before saat layar laptop diubah ukurannya (Responsive Locking)
+        window.addEventListener('resize', function() {
+            const width = document.querySelector('.slider-container').clientWidth;
+            document.querySelectorAll('.slider-img-before').forEach(img => {
+                img.style.width = width + 'px';
+            });
+        });
+        window.dispatchEvent(new Event('resize'));
     </script>
 </body>
 </html>
