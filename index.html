@@ -7,7 +7,7 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,600;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,600;1,400&display=swap" rel="stylesheet">
 
     <style>
         /* CSS RESET & UTAMA */
@@ -18,7 +18,7 @@
         }
 
         body {
-            background-color: #0b0b0b; /* Warna hitam lebih pekat & mewah */
+            background-color: #0b0b0b;
             color: #e5e5e5;
             font-family: 'Inter', sans-serif;
             line-height: 1.8;
@@ -62,11 +62,10 @@
             font-family: 'Playfair Display', serif;
             font-style: italic;
             font-size: 1.4rem;
-            color: #ffffff;
+            color: #aeaeae;
             text-align: justify;
             margin-bottom: 80px;
             line-height: 1.9;
-            color: #aeaeae;
             border-left: 2px solid #333333;
             padding-left: 25px;
         }
@@ -76,7 +75,7 @@
             margin-bottom: 70px;
         }
 
-        .article-section h2 {
+        .article-section h2, .section-heading {
             font-family: 'Inter', sans-serif;
             font-size: 1.6rem;
             color: #ffffff;
@@ -93,7 +92,7 @@
             font-weight: 300;
         }
 
-        /* FITUR BARU: Wadah Gambar Before/After Interaktif */
+        /* Wadah Gambar Before/After Interaktif */
         .image-wrapper {
             width: 100%;
             height: 480px;
@@ -106,7 +105,6 @@
             background-color: #151515;
         }
 
-        /* Foto Default (After) */
         .portfolio-img {
             width: 100%;
             height: 100%;
@@ -119,18 +117,15 @@
             z-index: 2;
         }
 
-        /* Foto Saat Kursor Diatasnya (Before) */
         .portfolio-img.before-img {
             z-index: 1;
             opacity: 1;
         }
 
-        /* Efek Transisi Menghilang Saat Disentuh/Hover */
         .image-wrapper:hover .after-img {
             opacity: 0;
         }
 
-        /* Label Kecil Indikator di Pojok Gambar */
         .img-label {
             position: absolute;
             bottom: 15px;
@@ -150,10 +145,93 @@
         }
 
         .image-wrapper:hover .img-label {
-            opacity: 0; /* Menghilang saat hover agar tidak menutupi gambar */
+            opacity: 0;
         }
 
-        /* Garis Pembatas Antar Artikel */
+        /* PRICING SECTIONS (Model Artikel Bersih Tanpa Box Kaku) */
+        .price-list {
+            margin-bottom: 30px;
+        }
+
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            padding: 12px 0;
+            border-bottom: 1px dashed #222222;
+        }
+
+        .price-name {
+            font-size: 1.1rem;
+            color: #dddddd;
+            font-weight: 400;
+        }
+
+        .price-dots {
+            flex-grow: 1;
+            border-bottom: 1px dashed #222222;
+            margin: 0 15px;
+            position: relative;
+            top: -4px;
+        }
+
+        .price-value {
+            font-size: 1.1rem;
+            color: #ffffff;
+            font-weight: 500;
+        }
+
+        .price-note {
+            font-size: 0.9rem;
+            color: #666666;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        /* FAQ SECTION (Akordeon Minimalis Modern) */
+        .faq-wrapper {
+            margin-top: 20px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #1a1a1a;
+            padding: 15px 0;
+        }
+
+        .faq-question {
+            font-size: 1.1rem;
+            color: #ffffff;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 400;
+            user-select: none;
+            padding: 10px 0;
+        }
+
+        .faq-question::after {
+            content: '+';
+            font-size: 1.3rem;
+            color: #666666;
+            transition: transform 0.3s ease;
+        }
+
+        /* Logika Buka-Tutup Menggunakan Elemen Details Bawaan HTML */
+        details[open] .faq-question::after {
+            transform: rotate(45deg);
+            color: #ffffff;
+        }
+
+        .faq-answer {
+            font-size: 1rem;
+            color: #999999;
+            padding: 10px 0 20px 0;
+            font-weight: 300;
+            text-align: justify;
+        }
+
+        /* Garis Pembatas Antar Bagian */
         .divider {
             height: 1px;
             background-color: #1a1a1a;
@@ -184,7 +262,6 @@
             font-weight: 300;
         }
 
-        /* RE-DESIGN: Tampilan Pilihan Ceklis Modern */
         .services-form {
             max-width: 500px;
             margin: 0 auto 40px auto;
@@ -205,6 +282,7 @@
             user-select: none;
             font-size: 1rem;
             color: #cccccc;
+            text-align: left;
         }
 
         .checkbox-group:hover {
@@ -212,7 +290,6 @@
             background-color: #1c1c1c;
         }
 
-        /* Efek saat checkbox asli di-centang */
         .checkbox-group input:checked + span {
             color: #ffffff;
             font-weight: 500;
@@ -229,7 +306,6 @@
             cursor: pointer;
         }
 
-        /* Tombol Email Premium */
         .btn-email {
             display: inline-block;
             background-color: #ffffff;
@@ -310,6 +386,74 @@
                 <div class="img-label">Hover to see Before</div>
             </div>
         </div>
+
+        <div class="divider"></div>
+
+        <section class="article-section">
+            <h2 class="section-heading">Rates & Pricing Details</h2>
+            <p>Fair and flexible pricing models based on project volume and complexity. Custom quotes are always available for high-volume batches or recurring monthly workflows.</p>
+            
+            <div class="price-list">
+                <div class="price-item">
+                    <span class="price-name">Background Removal / Clipping Path</span>
+                    <div class="price-dots"></div>
+                    <span class="price-value">Starts from $1.50 / image</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-name">Standard E-commerce Retouching (Dust, Color Fix)</span>
+                    <div class="price-dots"></div>
+                    <span class="price-value">Starts from $3.00 / image</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-name">High-End Product Retouching (Texture, Reflection)</span>
+                    <div class="price-dots"></div>
+                    <span class="price-value">Starts from $5.00 / image</span>
+                </div>
+                <div class="price-item">
+                    <span class="price-name">Ghost Mannequin / Invisible Apparel Effect</span>
+                    <div class="price-dots"></div>
+                    <span class="price-value">Starts from $4.50 / image</span>
+                </div>
+            </div>
+            <p class="price-note">*Note: Bulk discount is applicable for batches over 50+ images. Turnaround time ranges between 24-48 hours depending on volume.</p>
+        </section>
+
+        <div class="divider"></div>
+
+        <section class="article-section">
+            <h2 class="section-heading">Frequently Asked Questions</h2>
+            <div class="faq-wrapper">
+                
+                <details class="faq-item">
+                    <summary class="faq-question">What is your standard turnaround time?</summary>
+                    <div class="faq-answer">
+                        For standard batches (under 30 images), the turnaround time is usually 24 to 48 hours. For larger bulk volume projects, a clear delivery schedule will be discussed and determined beforehand to match your timeline.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">In what file formats do you deliver the final images?</summary>
+                    <div class="faq-answer">
+                        I can deliver files according to your needs. Most e-commerce clients request high-resolution JPEG, transparent PNG, or fully layered PSD/TIFF files for their operational flexibility.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">Do you offer a free trial or test sample?</summary>
+                    <div class="faq-answer">
+                        Yes, absolutely. I understand the importance of quality assurance. You can send 1 or 2 sample images as a test project so you can review my precision and speed before committing to a full commercial contract.
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary class="faq-question">How do we handle large file transfers?</summary>
+                    <div class="faq-answer">
+                        We can use safe cloud platform storage solutions such as Google Drive, Dropbox, or WeTransfer. You can simply share the link to your raw product shots, and I will upload the refined visuals back to the same structured folder.
+                    </div>
+                </details>
+
+            </div>
+        </section>
 
         <section class="contact-section">
             <h2>Select Services You Need</h2>
