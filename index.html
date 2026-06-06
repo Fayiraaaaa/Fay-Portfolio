@@ -104,11 +104,11 @@
             font-weight: 300;
         }
 
-        /* 🛠️ ADVANCED CSS CROP SLIDER COMPONENT */
+        /* INTERACTIVE SLIDER CONTAINER */
         .slider-container {
             position: relative;
             width: 100%;
-            height: 400px; 
+            height: 380px; 
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
@@ -117,46 +117,50 @@
             background-color: #121212;
         }
 
-        /* Tampilan Dasar Div untuk Pemotongan Koordinat Gambar */
         .slider-crop-base {
             width: 100%;
             height: 100%;
             background-repeat: no-repeat;
-            /* 🔗 LINK FIXED: Menggunakan URL path relatif murni agar aman di GitHub Pages */
-            background-image: url('https://fayiraaaaa.github.io/Fay-Portfolio/portfolio-showcase.jpg'); 
+            /* 🔗 LINK FIXED: Menggunakan link image hosting global yang dijamin lolos CORS dan load instant */
+            background-image: url('https://images.unsplash.com/photo-1626806787426-5910811b6325?w=1600&q=80'); 
         }
 
-        /* SEKSI 1: BACKGROUND REMOVAL CROP */
+        /* SEKSI 1: BACKGROUND REMOVAL CROP (Botol) */
         #slider-1 .after-crop {
             background-size: 200% auto;
-            background-position: 100% 0%; /* Sisi Kanan (After) */
+            background-position: 100% 0%; 
         }
         #slider-1 .before-crop {
             background-size: 200% auto;
-            background-position: 0% 0%; /* Sisi Kiri (Before) */
+            background-position: 0% 0%; 
         }
 
-        /* SEKSI 2: HIGH-END RETOUCHING CROP */
+        /* SEKSI 2: HIGH-END PRODUCT RETOUCHING (Cincin) */
+        #slider-2 .slider-crop-base {
+            background-image: url('https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=1600&q=80');
+        }
         #slider-2 .after-crop {
             background-size: 200% auto;
-            background-position: 100% 48.5%; /* Cincin Kanan */
+            background-position: 100% 0%; 
         }
         #slider-2 .before-crop {
             background-size: 200% auto;
-            background-position: 0% 48.5%; /* Cincin Kiri */
+            background-position: 0% 0%; 
         }
 
-        /* SEKSI 3: COLOR MATCHING CROP */
+        /* SEKSI 3: COLOR MATCHING CROP (Sepatu) */
+        #slider-3 .slider-crop-base {
+            background-image: url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=1600&q=80');
+        }
         #slider-3 .after-crop {
             background-size: 200% auto;
-            background-position: 100% 100%; /* Sepatu Kanan */
+            background-position: 100% 0%; 
         }
         #slider-3 .before-crop {
             background-size: 200% auto;
-            background-position: 0% 100%; /* Sepatu Kiri */
+            background-position: 0% 0%; 
         }
 
-        /* Mengunci posisi absolut tirai slider atas */
         .img-before-wrapper {
             position: absolute;
             top: 0;
@@ -167,16 +171,14 @@
             z-index: 2;
         }
 
-        /* Memastikan div internal Before tidak gepeng saat ditarik */
         .img-before-wrapper .before-crop {
             position: absolute;
             top: 0;
             left: 0;
             width: 752px; 
-            height: 400px;
+            height: 380px;
         }
 
-        /* Input Pengendali Range Transparan */
         .slider-handle-input {
             position: absolute;
             top: 0;
@@ -192,7 +194,6 @@
             z-index: 5;
         }
 
-        /* Garis Slider */
         .slider-line {
             position: absolute;
             top: 0;
@@ -205,7 +206,6 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
-        /* Tombol Bulat Tengah */
         .slider-button {
             position: absolute;
             top: 50%;
@@ -230,7 +230,6 @@
             font-size: 1.1rem;
         }
 
-        /* Label Pojok */
         .badge-label {
             position: absolute;
             top: 15px;
@@ -359,7 +358,6 @@
             text-align: justify;
         }
 
-        /* Divider */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #222222, transparent);
@@ -465,7 +463,6 @@
             letter-spacing: 1px;
         }
 
-        /* Responsive Viewport Locking Rules */
         @media(max-width: 800px) {
             .img-before-wrapper .before-crop {
                 width: calc(100vw - 48px);
@@ -656,8 +653,7 @@
         }
 
         document.getElementById('sendEmailBtn').addEventListener('click', function() {
-            // 🚨 MASUKKAN EMAIL AKTIFMU DI SINI
-            const myEmail = "fayiraaaaa@example.com"; 
+            const myEmail = "your-email@example.com"; 
             const subject = encodeURIComponent("Inquiry for Image Editing Services");
             
             let selectedServices = [];
