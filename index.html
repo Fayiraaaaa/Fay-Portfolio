@@ -21,7 +21,7 @@
             background-color: #0b0c0d; 
             background-image: radial-gradient(#1c1e21 1px, transparent 1px);
             background-size: 25px 25px;
-            color: #ffffff; /* High-Contrast Clean White */
+            color: #ffffff;
             font-family: 'Inter', sans-serif;
             line-height: 1.8;
             -webkit-font-smoothing: antialiased;
@@ -104,49 +104,79 @@
             font-weight: 300;
         }
 
-        /* 🛠️ MATEMATICALLY LOCKED SLIDER CORE COMPONENT */
+        /* 🛠️ ADVANCED CSS CROP SLIDER COMPONENT */
         .slider-container {
             position: relative;
             width: 100%;
-            height: 480px;
+            height: 400px; /* Diatur pas agar proporsi crop gambar estetik */
             overflow: hidden;
             border-radius: 8px;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.7);
             margin-bottom: 30px;
             user-select: none;
+            background-color: #121212;
         }
 
-        /* Base layer: AFTER image (Locked securely in place) */
-        .slider-img-after {
+        /* Tampilan Dasar Div untuk Pemotongan Koordinat Gambar */
+        .slider-crop-base {
             width: 100%;
             height: 100%;
-            object-fit: cover;
-            display: block;
+            background-repeat: no-repeat;
+            /* Memanggil file kolase utuh milikmu */
+            background-image: url('portfolio-showcase.jpg'); 
         }
 
-        /* Top layer curtain: BEFORE image wrapper */
+        /* SEKSI 1: BACKGROUND REMOVAL CROP */
+        #slider-1 .after-crop {
+            background-size: 215% auto;
+            background-position: 86.5% 10%; /* Mengunci area botol kanan (After) */
+        }
+        #slider-1 .before-crop {
+            background-size: 215% auto;
+            background-position: 13.5% 10%; /* Mengunci area botol kiri (Before) */
+        }
+
+        /* SEKSI 2: HIGH-END RETOUCHING CROP (Menggunakan area cincin kanan atas agar lebih detail) */
+        #slider-2 .after-crop {
+            background-size: 215% auto;
+            background-position: 86.5% 10%; /* Mengunci area cincin kanan (After) */
+        }
+        #slider-2 .before-crop {
+            background-size: 215% auto;
+            background-position: 13.5% 10%; /* Mengunci area cincin kiri (Before) */
+        }
+
+        /* SEKSI 3: COLOR MATCHING CROP */
+        #slider-3 .after-crop {
+            background-size: 215% auto;
+            background-position: 86.5% 90%; /* Mengunci area sepatu kanan (After) */
+        }
+        #slider-3 .before-crop {
+            background-size: 215% auto;
+            background-position: 13.5% 90%; /* Mengunci area sepatu kiri (Before) */
+        }
+
+        /* Mengunci posisi absolut tirai slider atas */
         .img-before-wrapper {
             position: absolute;
             top: 0;
             left: 0;
-            width: 50%; /* Starting position exactly split in half */
+            width: 50%;
             height: 100%;
             overflow: hidden;
             z-index: 2;
         }
 
-        /* Before image layout configuration (Locks position relative to outer viewport) */
-        .slider-img-before {
+        /* Memastikan div internal Before tidak gepeng saat ditarik */
+        .img-before-wrapper .before-crop {
             position: absolute;
             top: 0;
             left: 0;
-            width: 752px; /* Set directly to inner container boundaries */
-            height: 480px;
-            object-fit: cover;
-            max-width: none;
+            width: 752px; /* Lebar area box kontainer dikunci */
+            height: 400px;
         }
 
-        /* Transparent Range Control input overlay */
+        /* Input Pengendali Range Transparan */
         .slider-handle-input {
             position: absolute;
             top: 0;
@@ -162,7 +192,7 @@
             z-index: 5;
         }
 
-        /* Split Line Visual Indicator */
+        /* Garis Slider */
         .slider-line {
             position: absolute;
             top: 0;
@@ -175,7 +205,7 @@
             box-shadow: 0 0 10px rgba(0,0,0,0.5);
         }
 
-        /* Circular Control Knob */
+        /* Tombol Bulat Tengah */
         .slider-button {
             position: absolute;
             top: 50%;
@@ -200,7 +230,7 @@
             font-size: 1.1rem;
         }
 
-        /* Corner Status Labels */
+        /* Label Pojok */
         .badge-label {
             position: absolute;
             top: 15px;
@@ -276,7 +306,7 @@
             padding-left: 15px;
         }
 
-        /* FAQ ACCORDION STYLE */
+        /* FAQ SECTION */
         .faq-wrapper {
             margin-top: 20px;
         }
@@ -329,14 +359,14 @@
             text-align: justify;
         }
 
-        /* Section Dividers */
+        /* Divider */
         .divider {
             height: 1px;
             background: linear-gradient(90deg, transparent, #222222, transparent);
             margin: 60px 0;
         }
 
-        /* Contact Section Container */
+        /* Contact Section */
         .contact-section {
             text-align: center;
             padding: 70px 40px;
@@ -435,9 +465,9 @@
             letter-spacing: 1px;
         }
 
-        /* Lock-Position Image Responsive Calculation */
+        /* Responsive Viewport Locking Rules */
         @media(max-width: 800px) {
-            .slider-img-before {
+            .img-before-wrapper .before-crop {
                 width: calc(100vw - 48px);
             }
         }
@@ -465,10 +495,9 @@
                 <span class="badge-label badge-before">Before</span>
                 <span class="badge-label badge-after">After</span>
                 
-                <img src="https://images.unsplash.com/photo-1626806787426-5910811b6325?w=800&q=80" class="slider-img-after" alt="Bottle After Background Removal">
-                
+                <div class="slider-crop-base after-crop"></div>
                 <div class="img-before-wrapper" id="wrapper-1">
-                    <img src="https://images.unsplash.com/photo-1618220179428-22790b461013?w=800&q=80" class="slider-img-before" alt="Bottle Before Background Removal">
+                    <div class="slider-crop-base before-crop"></div>
                 </div>
                 
                 <div class="slider-line" id="line-1"></div>
@@ -489,10 +518,9 @@
                 <span class="badge-label badge-before">Before</span>
                 <span class="badge-label badge-after">After</span>
                 
-                <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=800&q=80" class="slider-img-after" alt="Diamond Ring After Retouching">
-                
+                <div class="slider-crop-base after-crop"></div>
                 <div class="img-before-wrapper" id="wrapper-2">
-                    <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=800&q=80" class="slider-img-before" alt="Diamond Ring Before Retouching">
+                    <div class="slider-crop-base before-crop"></div>
                 </div>
                 
                 <div class="slider-line" id="line-2"></div>
@@ -513,10 +541,9 @@
                 <span class="badge-label badge-before">Before</span>
                 <span class="badge-label badge-after">After</span>
                 
-                <img src="https://images.unsplash.com/photo-1520639888713-7851133b1ed0?w=800&q=80" class="slider-img-after" alt="Leather Boots After Color Correction">
-                
+                <div class="slider-crop-base after-crop"></div>
                 <div class="img-before-wrapper" id="wrapper-3">
-                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?w=800&q=80" class="slider-img-before" alt="Leather Boots Before Color Correction">
+                    <div class="slider-crop-base before-crop"></div>
                 </div>
                 
                 <div class="slider-line" id="line-3"></div>
@@ -621,7 +648,6 @@
     </div>
 
     <script>
-        // Mathematical Anchor Logic: Keeps image static while revealing mask curtain
         function moveSlider(slider, wrapperId, lineId, buttonId) {
             const value = slider.value;
             document.getElementById(wrapperId).style.width = value + '%';
@@ -629,9 +655,8 @@
             document.getElementById(buttonId).style.left = value + '%';
         }
 
-        // Automatic Email Drafting Script
         document.getElementById('sendEmailBtn').addEventListener('click', function() {
-            const myEmail = "your-email@example.com"; // UPDATE WITH YOUR ACTIVE ADDRESS
+            const myEmail = "your-email@example.com"; // UPDATE EMAIL KAMU DISINI
             const subject = encodeURIComponent("Inquiry for Image Editing Services");
             
             let selectedServices = [];
@@ -653,10 +678,10 @@
             window.location.href = `mailto:${myEmail}?subject=${subject}&body=${body}`;
         });
 
-        // Dynamic responsive resizing fallback anchor to adjust image absolute coordinates
+        // Script kalkulasi matematika penyesuai posisi absolut saat resize layar browser
         window.addEventListener('resize', function() {
             const width = document.querySelector('.slider-container').clientWidth;
-            document.querySelectorAll('.slider-img-before').forEach(img => {
+            document.querySelectorAll('.before-crop').forEach(img => {
                 img.style.width = width + 'px';
             });
         });
